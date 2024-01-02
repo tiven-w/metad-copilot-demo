@@ -104,6 +104,7 @@
     align-items: start;
     flex-wrap: wrap;
     gap: 1.25rem;
+    margin-top: 1rem;
   }
 
   .pill {
@@ -225,19 +226,9 @@
           <clipPath id="a"><path fill="#fff" d="M0 0h982v239H0z" /></clipPath>
         </defs>
       </svg>
-      <h1>Hello, {{ title }}</h1>
-      <p>Congratulations! Your app is running. 🎉</p>
-    </div>
-    <div class="divider" role="separator" aria-label="Divider"></div>
-    <div class="right-side">
-      <div class="pill-group">
-        @for (item of [
-          { title: 'Explore the Docs', link: 'https://angular.dev' },
-          { title: 'Learn with Tutorials', link: 'https://angular.dev/tutorials' },
-          { title: 'CLI Docs', link: 'https://angular.dev/tools/cli' },
-          { title: 'Angular Language Service', link: 'https://angular.dev/tools/language-service' },
-          { title: 'Angular DevTools', link: 'https://angular.dev/tools/devtools' },
-        ]; track item.title) {
+
+      <div class="pill-group" [@listAnimation]="helps()">
+        @for (item of helps(); track item.title) {
           <a
             class="pill"
             [href]="item.link"
@@ -259,6 +250,16 @@
           </a>
         }
       </div>
+      
+    </div>
+    <div class="divider" role="separator" aria-label="Divider"></div>
+    <div class="right-side">
+      <ngm-copilot-chat
+        [user]="{
+            name: '元数信息',
+            imageUrl: '/assets/images/logo@3x.png'
+        }"
+      ></ngm-copilot-chat>
       <div class="social-links">
         <a
           href="https://github.com/angular/angular"

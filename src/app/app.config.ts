@@ -17,7 +17,8 @@ export const appConfig: ApplicationConfig = {
       Promise.resolve({
         enabled: true,
         chatUrl: '',
-        apiKey: 'sk-xxxxxx',
+        modelsUrl: '',
+        apiKey: 'sk-xxxxxxx',
         provider: "openai",
       })
     ),

@@ -84,7 +84,8 @@ export class AppComponent {
           },
         ],
         implementation: async (helps: Link[]) => {
-          this.helps.set(helps);
+          this.helps.set(helps)
+          return `Command finish!`
         },
       }),
     ],

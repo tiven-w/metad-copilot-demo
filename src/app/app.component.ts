@@ -22,16 +22,16 @@ type Link = {
   animations: [
     trigger('listAnimation', [
       transition('* => *', [
-        query(':leave', [
-          stagger('100ms', [
-            animate('100ms ease-in', style({ opacity: 0, transform: 'translateX(-20px)' }))
-          ])
-        ], { optional: true }),
+        // query(':leave', [
+        //   stagger('100ms', [
+        //     animate('100ms ease-in', style({ opacity: 0, transform: 'translateX(-20px)' }))
+        //   ])
+        // ], { optional: true }),
         query(':enter', [
           sequence([
-            style({ opacity: 0, transform: 'translateX(-20px)', position: 'absolute' }),
-            animate('0ms 100ms', style({position: 'relative'})),
-            stagger('100ms', animate('1000ms ease-out', style({ opacity: 1, transform: 'translateX(0)' })))
+            style({ opacity: 0, transform: 'translateX(-20px)' }),
+            // animate('0ms 100ms', style({position: 'relative'})),
+            stagger('100ms', animate('300ms ease-out', style({ opacity: 1, transform: 'translateX(0)' })))
           ])
         ], { optional: true })
       ])
